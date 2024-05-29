@@ -1,13 +1,18 @@
 {
-  "name": "api",
+  "name": "memory-game-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API for the memory game backend",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "memory",
+    "game",
+    "api",
+    "backend"
+  ],
   "author": "Mahdi Saeedi",
   "license": "ISC",
   "dependencies": {
