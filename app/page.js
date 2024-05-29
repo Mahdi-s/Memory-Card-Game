@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Home() {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const [gameState, setGameState] = useState(null);
   const [flippedCards, setFlippedCards] = useState([]);
 
   useEffect(() => {
-    axios.post('http://localhost:3001/new-game').then(response => {
+    axios.post(`${API_URL}/new-game`).then(response => {
       setGameState(response.data);
     });
   }, []);
@@ -16,7 +18,7 @@ export default function Home() {
   const handleCardClick = (index) => {
     if (flippedCards.length === 1) {
       const [firstIndex] = flippedCards;
-      axios.post('http://localhost:3001/flip-card', { index1: firstIndex, index2: index })
+      axios.post(`${API_URL}/flip-card`, { index1: firstIndex, index2: index })
         .then(response => {
           console.log('Card flipped:', response.data);
           setGameState(response.data);
@@ -32,7 +34,7 @@ export default function Home() {
   };
 
   const handleNewGame = () => {
-    axios.post('http://localhost:3001/reset-game').then(response => {
+    axios.post(`${API_URL}/reset-game`).then(response => {
       console.log('New game started:', response.data);
       setGameState(response.data);
     }).catch(error => {
