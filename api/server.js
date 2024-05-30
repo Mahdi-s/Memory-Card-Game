@@ -96,6 +96,14 @@ app.get('/game-state', (req, res) => {
   res.json(gameData);
 });
 
+
+app.post('/reset-cumulative-scores', (req, res) => {
+  cumulativeScores.player1 = 0;
+  cumulativeScores.player2 = 0;
+  res.json({ message: 'Cumulative scores reset.', cumulativeScores });
+});
+
+
 app.post('/reset-game', (req, res) => {
   cumulativeScores.player1 += gameData.players.player1;
   cumulativeScores.player2 += gameData.players.player2;

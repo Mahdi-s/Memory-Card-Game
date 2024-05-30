@@ -59,6 +59,15 @@ export default function Home() {
     });
   };
 
+  const handleResetCumulativeScores = () => {
+    console.log('resetting scores');
+    axios.post(`${API_URL}/reset-cumulative-scores`).then(response => {
+      setCumulativeScores(response.data.cumulativeScores);
+    }).catch(error => {
+      console.error('Error resetting cumulative scores:', error);
+    });
+  };
+
   if (!gameState) {
     return <div>Loading...</div>;
   }
@@ -75,6 +84,12 @@ export default function Home() {
           className="ml-4 px-4 py-2 bg-blue-500 text-white rounded"
         >
           New Game
+        </button>
+        <button
+          onClick={handleResetCumulativeScores}
+          className="ml-4 px-4 py-2 bg-red-500 text-white rounded"
+        >
+          Reset Scores
         </button>
       </div>
       <div className="flex items-center justify-center w-full mt-4">
