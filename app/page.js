@@ -5,8 +5,8 @@ import axios from "axios";
 
 export default function Home() {
   //const API_URL = process.env.GAME_API_URL;
-  //const API_URL = 'https://cardgamelogic-759397bffdcc.herokuapp.com';
-  const API_URL = "http://localhost:3001";
+  const API_URL = 'https://cardgamelogic-759397bffdcc.herokuapp.com';
+  //const API_URL = "http://localhost:3001";
   const [gameState, setGameState] = useState(null);
   const [flippedCards, setFlippedCards] = useState([]);
   const [cumulativeScores, setCumulativeScores] = useState({
