@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Home() {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
+  //const API_URL = process.env.GAME_API_URL;
+  const API_URL = 'https://cardgamelogic-759397bffdcc.herokuapp.com';
   const [gameState, setGameState] = useState(null);
   const [flippedCards, setFlippedCards] = useState([]);
 
@@ -47,14 +47,22 @@ export default function Home() {
   }
 
   return (
-    <div style={{ backgroundColor: 'black', color: 'white', padding: '20px' }}>
-      <h1>Memory Game</h1>
-      <button onClick={handleNewGame}>New Game</button>
-      <div>
-        <div>Player 1 Score: {gameState.players.player1}</div>
-        <div>Player 2 Score: {gameState.players.player2}</div>
+    <div  className="flex flex-col items-center justify-center min-h-screen py-2" style={{ backgroundColor: 'black', color: 'white', padding: '20px' }}>
+      <div className="flex items-center justify-center w-full">
+        <h1 className="text-2xl font-bold">Memory Game</h1>
+        <button onClick={handleNewGame} className="ml-4 px-4 py-2 bg-blue-500 text-white rounded">New Game</button>
       </div>
-      <div>Current Turn: {gameState.turn}</div>
+      <div className="flex items-center justify-center w-full mt-4">
+        <div className="px-4 py-2 bg-orange-500 rounded">
+          <h2 className="text-xl font-bold">Player 1 Score: {gameState.players.player1}</h2>
+        </div>
+        <div className="ml-4 px-4 py-2 bg-orange-500 rounded">
+          <h2 className="text-xl font-bold">Player 2 Score: {gameState.players.player2}</h2>
+        </div>
+      </div>
+      <div className="mt-4">
+        <h2 className={`text-xl font-bold ${gameState.turn === 1 ? 'text-red-500' : 'text-green-500'}`}>Current Turn: {gameState.turn}</h2>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
         {gameState.board.map((card, index) => (
           <div

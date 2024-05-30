@@ -44,6 +44,7 @@ function initializeGame() {
 }
 
 app.post('/new-game', (req, res) => {
+ // res.status(200).send({ message: 'New game created' });
   initializeGame();
   res.json(gameData);
 });
