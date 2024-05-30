@@ -10,6 +10,7 @@
     "react-dom": "^18"
   },
   "scripts": {
+    "dev": "next dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

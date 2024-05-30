@@ -18,6 +18,15 @@ let gameData = {
   pairsFound: 0,
 };
 
+let cumulativeScores = { player1: 0, player2: 0 };
+
+app.post('/reset-game', (req, res) => {
+  cumulativeScores.player1 += gameData.players.player1;
+  cumulativeScores.player2 += gameData.players.player2;
+  initializeGame();
+  res.json({ gameData, cumulativeScores });
+});
+
 
 const cards = [
   'AS', 'AH', 'AD', 'AC', '2S', '2H', '2D', '2C',
@@ -46,11 +55,10 @@ function initializeGame() {
 app.post('/new-game', (req, res) => {
  // res.status(200).send({ message: 'New game created' });
   initializeGame();
-  res.json(gameData);
+  res.json({ gameData, cumulativeScores });
 });
 
 app.post('/flip-card', (req, res) => {
-  console.log('Game state before flip:');
   const { index1, index2 } = req.body;
   const { board, turn } = gameData;
 
@@ -73,20 +81,26 @@ app.post('/flip-card', (req, res) => {
     gameData.players[turn] += 1;
     gameData.pairsFound += 1;
   } else {
-    gameData.turn = turn === 'player1' ? 'player2' : 'player1';
+    setTimeout(() => {
+      board[index1].flipped = false;
+      board[index2].flipped = false;
+      gameData.turn = turn === 'player1' ? 'player2' : 'player1';
+    }, 1000); // Delay of 1 second
   }
 
-  console.log('Game state after flip:', gameData);
   res.json(gameData);
 });
+
 
 app.get('/game-state', (req, res) => {
   res.json(gameData);
 });
 
 app.post('/reset-game', (req, res) => {
+  cumulativeScores.player1 += gameData.players.player1;
+  cumulativeScores.player2 += gameData.players.player2;
   initializeGame();
-  res.json(gameData);
+  res.json({ gameData, cumulativeScores });
 });
 
 initializeGame();
