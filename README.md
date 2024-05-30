@@ -8,7 +8,7 @@ The project is divided into two main parts:
 
 API: This is the backend of the application, which contains the server logic for the game. It is deployed on Heroku.
 
-Frontend: This is the user interface of the application, where users can interact with the game. It is deployed on Vercel.
+Frontend: This is the user interface of the application, where users can interact with the game via Axios. It is deployed on Vercel.
 
 ## Features
 Card flipping logic
@@ -21,7 +21,7 @@ To install the project locally, follow these steps:
 Install the dependencies using npm install
 Start the server using npm start
 Deployment
-The API is deployed on Heroku and the frontend is deployed on Vercel. You can access the live application at [[insert live application URL here](https://memory-card-game-beige-alpha.vercel.app/)].
+The API is deployed on Heroku and the frontend is deployed on Vercel. You can access the live application at [[Card Game](https://memory-card-game-beige-alpha.vercel.app/)].
 
 ## Contributing
 Contributions are welcome. Please submit a pull request or create an issue to discuss the changes you want to make.
