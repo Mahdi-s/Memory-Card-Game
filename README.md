@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Memory Game
+This repository contains the source code for a Memory Game. The game is a simple card flipping memory game where the goal is to match pairs of cards.
 
-## Getting Started
+## Structure
+The project is divided into two main parts:
 
-First, run the development server:
+API: This is the backend of the application, which contains the server logic for the game. It is deployed on Heroku.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Frontend: This is the user interface of the application, where users can interact with the game. It is deployed on Vercel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+Card flipping logic
+Score tracking for two players
+Ability to start a new game
+Installation
+To install the project locally, follow these steps:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Clone the repository
+Install the dependencies using npm install
+Start the server using npm start
+Deployment
+The API is deployed on Heroku and the frontend is deployed on Vercel. You can access the live application at [[insert live application URL here](https://memory-card-game-beige-alpha.vercel.app/)].
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
+Contributions are welcome. Please submit a pull request or create an issue to discuss the changes you want to make.
 
-## Learn More
+## License
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
