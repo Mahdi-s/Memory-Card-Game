@@ -1,5 +1,7 @@
 ## Memory Game
 This repository contains the source code for a Memory Game. The game is a simple card flipping memory game where the goal is to match pairs of cards.
+![image](https://github.com/Mahdi-s/Memory-Card-Game/assets/44215423/08840b72-4475-4852-923b-68e8b0cfeb3a)
+
 
 ## Structure
 The project is divided into two main parts:
