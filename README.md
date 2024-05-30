@@ -8,7 +8,7 @@ The project is divided into two main parts:
 
 API: This is the backend of the application, which contains the server logic for the game. It is deployed on Heroku.
 
-Frontend: This is the user interface of the application, where users can interact with the game. It is deployed on Vercel.
+Frontend: This is the user interface of the application, where users can interact with the game via Axios. It is deployed on Vercel.
 
 ## Features
 Card flipping logic
