@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "memory-game-api",
   "version": "1.0.0",
   "description": "API for the memory game backend",
@@ -20,3 +21,21 @@
       "express": "^4.19.2"
   }
 }
+=======
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
+>>>>>>> 29256db9fb4ba60bf7d9fbe84c95d68edb979f30
