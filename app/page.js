@@ -25,18 +25,28 @@ export default function Home() {
   const handleCardClick = (index) => {
     if (flippedCards.length === 1) {
       const [firstIndex] = flippedCards;
-      axios
-        .post(`${API_URL}/flip-card`, { index1: firstIndex, index2: index })
-        .then((response) => {
-          setGameState(response.data);
+      axios.post(`${API_URL}/flip-card`, { index1: firstIndex, index2: index })
+        .then(response => {
+          const newGameState = response.data;
+          if (newGameState.board[firstIndex].card !== newGameState.board[index].card) {
+            setTimeout(() => {
+              newGameState.board[firstIndex].flipped = false;
+              newGameState.board[index].flipped = false;
+              setGameState({ ...newGameState });
+            }, 100); // Instant flip back delay
+          }
+          setGameState(newGameState);
           setFlippedCards([]);
         })
-        .catch((error) => {
-          console.error("Error flipping card:", error.response.data.error);
+        .catch(error => {
+          console.error('Error flipping card:', error.response.data.error);
           setFlippedCards([]);
         });
     } else {
       setFlippedCards([index]);
+      const newGameState = { ...gameState };
+      newGameState.board[index].flipped = true;
+      setGameState(newGameState);
     }
   };
 

@@ -85,7 +85,7 @@ app.post('/flip-card', (req, res) => {
       board[index1].flipped = false;
       board[index2].flipped = false;
       gameData.turn = turn === 'player1' ? 'player2' : 'player1';
-    }, 1000); // Delay of 1 second
+    }, 10); // Delay of 1 second
   }
 
   res.json(gameData);
