@@ -6,6 +6,10 @@ import Image from "next/image";
 import Select from "react-select";
 
 export default function Home() {
+<<<<<<< HEAD
+=======
+  //const API_URL = "http://localhost:3001";
+>>>>>>> 3d5d6ba5835cce2bd455ca94a0b4eae739a14dd5
   const API_URL = 'https://cardgamelogic-759397bffdcc.herokuapp.com';
   const avatars = ["/avatars/av1.png", "/avatars/av2.png", "/avatars/av3.png"];
 
