@@ -16,7 +16,10 @@ let gameData = {
   players: { player1: 0, player2: 0 },
   turn: 'player1',
   pairsFound: 0,
+  playerNames: { player1: '', player2: '' },
+  playerAvatars: { player1: '', player2: '' }
 };
+
 
 let cumulativeScores = { player1: 0, player2: 0 };
 
@@ -49,8 +52,21 @@ function initializeGame() {
   gameData.players.player2 = 0;
   gameData.turn = Math.random() < 0.5 ? 'player1' : 'player2';
   gameData.pairsFound = 0;
+  gameData.playerNames = { player1: '', player2: '' };
+  gameData.playerAvatars = { player1: '', player2: '' };
   console.log('Game initialized:', gameData);
 }
+
+
+app.post('/set-players', (req, res) => {
+  const { player1, player2, avatar1, avatar2 } = req.body;
+  gameData.playerNames.player1 = player1;
+  gameData.playerNames.player2 = player2;
+  gameData.playerAvatars.player1 = avatar1;
+  gameData.playerAvatars.player2 = avatar2;
+  res.json(gameData);
+});
+
 
 app.post('/new-game', (req, res) => {
  // res.status(200).send({ message: 'New game created' });
@@ -78,14 +94,20 @@ app.post('/flip-card', (req, res) => {
   if (board[index1].card === board[index2].card) {
     board[index1].matched = true;
     board[index2].matched = true;
-    gameData.players[turn] += 1;
+    // console.log('game turn ~~~~', gameData.players[turn]);
+    console.log('game turn ~~~~', turn);
+    // gameData.players[turn] += 1;
+
+    board[index1].matched = true;
+    board[index2].matched = true;
+    gameData.players[turn] += 1; // Correctly assigning the score to the current player
     gameData.pairsFound += 1;
   } else {
     setTimeout(() => {
       board[index1].flipped = false;
       board[index2].flipped = false;
       gameData.turn = turn === 'player1' ? 'player2' : 'player1';
-    }, 10); // Delay of 1 second
+    }, 100); // Delay of 1 second
   }
 
   res.json(gameData);
