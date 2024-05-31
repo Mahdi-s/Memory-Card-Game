@@ -95,11 +95,7 @@ app.post('/flip-card', (req, res) => {
     board[index1].matched = true;
     board[index2].matched = true;
     // console.log('game turn ~~~~', gameData.players[turn]);
-    console.log('game turn ~~~~', turn);
     // gameData.players[turn] += 1;
-
-    board[index1].matched = true;
-    board[index2].matched = true;
     gameData.players[turn] += 1; // Correctly assigning the score to the current player
     gameData.pairsFound += 1;
   } else {
