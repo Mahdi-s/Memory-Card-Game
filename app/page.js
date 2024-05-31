@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
-import Select from 'react-select';
+import Select from "react-select";
 
 export default function Home() {
-  const API_URL = "http://localhost:3001";
+  const API_URL = 'https://cardgamelogic-759397bffdcc.herokuapp.com';
   const avatars = ["/avatars/av1.png", "/avatars/av2.png", "/avatars/av3.png"];
 
   const [gameState, setGameState] = useState(null);
@@ -163,16 +163,22 @@ export default function Home() {
                 />
               </div>
               <Select
-  value={avatarOptions.find(option => option.value === player1Avatar)}
-  onChange={(option) => setPlayer1Avatar(option.value)}
-  options={avatarOptions}
-  formatOptionLabel={(option) => (
-    <div>
-      <img src={option.image.avatar} alt={option.label} width={20} height={20} />
-      
-    </div>
-  )}
-/>
+                value={avatarOptions.find(
+                  (option) => option.value === player1Avatar
+                )}
+                onChange={(option) => setPlayer1Avatar(option.value)}
+                options={avatarOptions}
+                formatOptionLabel={(option) => (
+                  <div>
+                    <img
+                      src={option.image.avatar}
+                      alt={option.label}
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                )}
+              />
               <div className="mb-4"></div>
               <div className="mb-4">
                 <label
@@ -191,16 +197,22 @@ export default function Home() {
                 />
               </div>
               <Select
-  value={avatarOptions.find(option => option.value === player2Avatar)}
-  onChange={(option) => setPlayer1Avatar(option.value)}
-  options={avatarOptions}
-  formatOptionLabel={(option) => (
-    <div>
-      <img src={option.image.avatar} alt={option.label} width={20} height={20} />
-      
-    </div>
-  )}
-/>
+                value={avatarOptions.find(
+                  (option) => option.value === player2Avatar
+                )}
+                onChange={(option) => setPlayer1Avatar(option.value)}
+                options={avatarOptions}
+                formatOptionLabel={(option) => (
+                  <div>
+                    <img
+                      src={option.image.avatar}
+                      alt={option.label}
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                )}
+              />
               <div className="mb-4"></div>
               <div className="flex items-center justify-between">
                 <button
