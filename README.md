@@ -22,7 +22,7 @@ To install the project locally, follow these steps:
 Install the dependencies using npm install
 Start the server using npm start
 Deployment
-The API is deployed on Heroku and the frontend is deployed on Vercel. You can access the live application at [[Card Game](https://memory-card-game-beige-alpha.vercel.app/)].
+The API is deployed on Heroku and the frontend is deployed on Vercel.
 
 ## Contributing
 Contributions are welcome. Please submit a pull request or create an issue to discuss the changes you want to make.
